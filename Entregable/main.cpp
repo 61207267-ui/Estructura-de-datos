@@ -1,12 +1,12 @@
 #include <iostream>
 #include <string>
-#include "validaciones.h" // Solo para leerEntero y leerPrioridad
+#include "validaciones.h" 
 
 using namespace std;
 
-// ========================================================
+
 // 1. ESTRUCTURAS DE DATOS DINÁMICAS (CON CONSTRUCTORES)
-// ========================================================
+
 
 struct NodoLista {
     int id;
@@ -48,9 +48,9 @@ struct NodoPila {
     }
 };
 
-// ========================================================
-// 2. FUNCIONES AUXILIARES DE CONTEO (Con bucles while)
-// ========================================================
+
+// 2. FUNCIONES AUXILIARES DE CONTEO 
+
 int contarElementosLista(NodoLista* inicio) {
     int c = 0;
     NodoLista* aux = inicio;
@@ -81,9 +81,9 @@ int contarElementosPila(NodoPila* tope) {
     return c;
 }
 
-// ========================================================
+
 // 3. VALIDACIÓN DE ID ÚNICO (Con bucle while)
-// ========================================================
+
 bool idExiste(NodoLista* inicio, int id) {
     NodoLista* aux = inicio;
     while (aux != NULL) {
@@ -95,9 +95,9 @@ bool idExiste(NodoLista* inicio, int id) {
     return false; 
 }
 
-// ========================================================
-// 4. OPERACIONES DEL GESTOR DE PROCESOS (LISTA ENLAZADA)
-// ========================================================
+
+// 4. OPERACIONES DEL GESTOR DE PROCESOS (LISTAS CON PUNTEROS)
+
 
 void insertarProcesoFinal(NodoLista*& inicio, int id, string nombre, int prioridad) {
     NodoLista* nuevo = new NodoLista(id, nombre, prioridad);
@@ -178,9 +178,9 @@ void eliminarProceso(NodoLista*& inicio, int id) {
     cout << "-> Proceso ID " << id << " eliminado permanentemente.\n";
 }
 
-// ========================================================
+
 // 5. OPERACIONES DEL PLANIFICADOR DE CPU (COLA DE PRIORIDAD)
-// ========================================================
+
 void encolarProcesoConPrioridad(NodoCola*& frente, NodoCola*& final, int id, string nombre, int prioridad) {
     NodoCola* nuevo = new NodoCola(id, nombre, prioridad);
     if (frente == NULL) { 
@@ -234,9 +234,9 @@ void mostrarCola(NodoCola* frente) {
     cout << "---------------------------------------------\n";
 }
 
-// ========================================================
-// 6. OPERACIONES DEL GESTOR DE MEMORIA (PILA DINÁMICA)
-// ========================================================
+
+// 6. OPERACIONES DEL GESTOR DE MEMORIA (PILA )
+
 bool pilaVacia(NodoPila* tope) {
     return (tope == NULL);
 }
@@ -275,9 +275,9 @@ void mostrarPilaMemoria(NodoPila* tope) {
     cout << "=========================================\n";
 }
 
-// ========================================================
-// 7. SUBMENÚS CON PASO POR REFERENCIA ESTRICTO (&)
-// ========================================================
+
+// 7. SUBMENÚS CON PASO POR REFERENCIA
+
 
 void subMenuGestorProcesos(NodoLista*& registroGlobal) { 
     int opLista;
